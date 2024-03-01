@@ -11,6 +11,8 @@ const app = express();
 
 app.use(cors({ credentials: true }));
 
+var port = process.env.PORT || 3000;
+
 app.get("/contract", async (req, res) => {
   try {
     const result = await warp
@@ -45,4 +47,6 @@ app.get("/", async (req, res) => {
   res.send("Protocol Land Cache v1.0.0");
 });
 
-app.listen(3000);
+app.listen(port, function () {
+  console.log("Listening on port " + port);
+});
