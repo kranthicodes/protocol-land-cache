@@ -35,7 +35,6 @@ app.get("/contract", async (req, res) => {
       sortKey: result.sortKey,
       state: result.cachedValue.state,
       validity: result.cachedValue.validity,
-      errorMessages: result.cachedValue.errorMessages,
       status: "evaluated",
     });
   } catch (error) {
